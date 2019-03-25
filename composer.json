@@ -1,0 +1,18 @@
+{
+    "name": "gammadia/translator",
+    "description": "Translation component, with builtin fallback for french language, and variable replacement",
+    "type": "library",
+    "require": {
+        "phpmyadmin/motranslator": "^4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gammadia\\i18n\\": "src/Gammadia/i18n/",
+            "Gammadia\\i18n\\Tests\\": "tests/"
+         }
+    },
+    "minimum-stability": "stable"
+}
