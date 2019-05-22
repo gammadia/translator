@@ -67,6 +67,18 @@ class TranslatorTest extends TestCase
     }
 
     /**
+     * @test
+     */
+    public function testCapitalize()
+    {
+        $capitalized = $this->getTranslator()->translate('text_lowercase');
+        $this->assertEquals('Test en minuscules', $capitalized);
+
+        $notCapitalized = $this->getTranslator()->translate('text_lowercase', [], false);
+        $this->assertEquals('test en minuscules', $notCapitalized);
+    }
+
+    /**
      * @param string $locale
      * @return TipeeTranslator
      */
