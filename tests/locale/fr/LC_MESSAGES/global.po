@@ -25,3 +25,6 @@ msgstr "Test avec fallback en français"
 
 msgid "test_without_fallback"
 msgstr "Test traduit en anglais"
+
+msgid "text_lowercase"
+msgstr "test en minuscules"

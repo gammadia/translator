@@ -69,9 +69,10 @@ class Translator
      *
      * @param string $msgId
      * @param array $params
+     * @param bool $capitalize
      * @return string
      */
-    public function translate($msgId, array $params = []): string
+    public function translate($msgId, array $params = [], bool $capitalize = true): string
     {
         $value = $this->translatorLoader->getTranslator()->gettext($msgId);
 
@@ -83,6 +84,7 @@ class Translator
             return sprintf('{%s}', $key);
         }, array_keys($params));
 
-        return str_replace(array_values($keys), array_values($params), $value);
+        $translated = str_replace(array_values($keys), array_values($params), $value);
+        return $capitalize ? \ucfirst($translated) : $translated;
     }
 }
