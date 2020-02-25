@@ -1,33 +1,34 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e633b8822b9fd4f4e16262ffecf4c621",
+    "content-hash": "839cb625b67c7bda2602205613111d06",
     "packages": [
         {
             "name": "phpmyadmin/motranslator",
-            "version": "4.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmyadmin/motranslator.git",
-                "reference": "fcb370254998fda7eeccfd7c787b4deb71b0d77c"
+                "reference": "9b7ad965c6861f986ddae9fa48af70463bb5588f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmyadmin/motranslator/zipball/fcb370254998fda7eeccfd7c787b4deb71b0d77c",
-                "reference": "fcb370254998fda7eeccfd7c787b4deb71b0d77c",
+                "url": "https://api.github.com/repos/phpmyadmin/motranslator/zipball/9b7ad965c6861f986ddae9fa48af70463bb5588f",
+                "reference": "9b7ad965c6861f986ddae9fa48af70463bb5588f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
-                "symfony/expression-language": "^4.0 || ^3.2 || ^2.8"
+                "php": "^7.1",
+                "symfony/expression-language": "^4.0 || ^5.0"
             },
             "require-dev": {
-                "apigen/apigen": "^4.1",
+                "phpmyadmin/coding-standard": "^1.0",
                 "phpunit/php-code-coverage": "*",
-                "phpunit/phpunit": "~4.8 || ~5.7 || ~6.5"
+                "phpunit/phpunit": "^7.4 || ^8",
+                "sami/sami": "^4.0"
             },
             "type": "library",
             "autoload": {
@@ -54,7 +55,7 @@
                 "mo",
                 "translator"
             ],
-            "time": "2018-02-12T13:22:52+00:00"
+            "time": "2020-02-22T21:02:15+00:00"
         },
         {
             "name": "psr/cache",
@@ -1873,7 +1874,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -1980,7 +1981,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "phpmyadmin/motranslator": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
