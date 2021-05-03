@@ -35,7 +35,7 @@ class Translator
      * Translator constructor.
      * @throws \Exception
      */
-    public function __construct(string $locale = 'fr', string $path, string $domain)
+    public function __construct(string $locale = 'fr', string $path = '', string $domain = '')
     {
         $this->domain = $domain;
 

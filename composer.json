@@ -3,10 +3,10 @@
     "description": "Translation component, with builtin fallback for french language, and variable replacement",
     "type": "library",
     "require": {
-        "phpmyadmin/motranslator": "^5.0"
+        "phpmyadmin/motranslator": "^5.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.5"
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
