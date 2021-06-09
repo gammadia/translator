@@ -4,7 +4,7 @@
     "type": "library",
     "license": "proprietary",
     "require": {
-        "php": ">=7.2",
+        "php": "^7.2|^8.0",
         "phpmyadmin/motranslator": "^5.2"
     },
     "require-dev": {
