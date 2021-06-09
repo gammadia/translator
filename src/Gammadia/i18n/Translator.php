@@ -68,7 +68,7 @@ class Translator
      * and then if not found by looking into the global translations
      *
      * @param string $msgId
-     * @param array $params
+     * @param array<string, mixed> $params
      * @param bool $capitalize
      * @return string
      */
