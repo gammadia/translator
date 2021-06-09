@@ -2,11 +2,15 @@
     "name": "gammadia/translator",
     "description": "Translation component, with builtin fallback for french language, and variable replacement",
     "type": "library",
+    "license": "proprietary",
     "require": {
+        "php": ">=7.2",
         "phpmyadmin/motranslator": "^5.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "overtrue/phplint": "^2.4|^3.0",
+        "phpstan/phpstan": "^0.12"
     },
     "autoload": {
         "psr-4": {
