@@ -14,7 +14,7 @@ class TranslatorTest extends TestCase
     /**
      * @test
      */
-    public function testTranslateFromDynamicDomain_Success()
+    public function testTranslateFromDynamicDomain_Success(): void
     {
         $this->assertEquals('Overridé par dynamic', $this->getTranslator()->translate('dynamic_test'));
     }
@@ -22,7 +22,7 @@ class TranslatorTest extends TestCase
     /**
      * @test
      */
-    public function testTranslateFromGlobalDomain_Success()
+    public function testTranslateFromGlobalDomain_Success(): void
     {
         $this->assertEquals('Test global', $this->getTranslator()->translate('global_text'));
     }
@@ -30,7 +30,7 @@ class TranslatorTest extends TestCase
     /**
      * @test
      */
-    public function testTranslateWithVariable_Success()
+    public function testTranslateWithVariable_Success(): void
     {
         $translated = $this->getTranslator()->translate('test_with_variable', ['variableName' => 'Leeroy']);
         $this->assertEquals('Test contenant Leeroy comme variable', $translated);
@@ -39,7 +39,7 @@ class TranslatorTest extends TestCase
     /**
      * @test
      */
-    public function testTranslateInEnglish_Success()
+    public function testTranslateInEnglish_Success(): void
     {
         $translated = $this->getTranslator('en')->translate('test_without_fallback');
         $this->assertEquals('Text translated in english', $translated);
@@ -48,7 +48,7 @@ class TranslatorTest extends TestCase
     /**
      * @test
      */
-    public function testTranslateFallbackToFrench_Success()
+    public function testTranslateFallbackToFrench_Success(): void
     {
         $translated = $this->getTranslator('en')->translate("test_with_fallback");
         $this->assertEquals('Test avec fallback en français', $translated);
@@ -57,7 +57,7 @@ class TranslatorTest extends TestCase
     /**
      * @test
      */
-    public function testSetLocaleChangesLocale_Success()
+    public function testSetLocaleChangesLocale_Success(): void
     {
         $translated = $this->getTranslator()->translate('test_without_fallback');
         $this->assertEquals('Test traduit en anglais', $translated);
@@ -69,7 +69,7 @@ class TranslatorTest extends TestCase
     /**
      * @test
      */
-    public function testCapitalize()
+    public function testCapitalize(): void
     {
         $capitalized = $this->getTranslator()->translate('text_lowercase');
         $this->assertEquals('Test en minuscules', $capitalized);
@@ -78,11 +78,7 @@ class TranslatorTest extends TestCase
         $this->assertEquals('test en minuscules', $notCapitalized);
     }
 
-    /**
-     * @param string $locale
-     * @return TipeeTranslator
-     */
-    private function getTranslator($locale = 'fr')
+    private function getTranslator(string $locale = 'fr'): Translator
     {
         return new Translator($locale, __DIR__.'/locale/', 'global');
     }
