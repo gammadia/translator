@@ -74,11 +74,11 @@ class Translator
      */
     public function translate($msgId, array $params = [], bool $capitalize = true): string
     {
-        $value = $this->translatorLoader->getTranslator()->gettext($msgId);
+        $translator = $this->translatorLoader->getTranslator();
 
-        if ($value === $msgId) {
-            $value = $this->fallbackTranslatorLoader->getTranslator()->gettext($msgId);
-        }
+        $value = $translator->exists($msgId)
+            ? $translator->gettext($msgId)
+            : $this->fallbackTranslatorLoader->getTranslator()->gettext($msgId);
 
         $keys = array_map(function ($key) {
             return sprintf('{%s}', $key);
