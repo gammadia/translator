@@ -8,6 +8,7 @@
 
 namespace Gammadia\i18n;
 
+use MessageFormatter;
 use PhpMyAdmin\MoTranslator\Loader;
 
 /**
@@ -31,6 +32,11 @@ class Translator
      */
     private $domain;
 
+     /**
+     * @var string
+     */
+    private $locale;
+
     /**
      * Translator constructor.
      * @throws \Exception
@@ -38,6 +44,7 @@ class Translator
     public function __construct(string $locale = 'fr', string $path = '', string $domain = '')
     {
         $this->domain = $domain;
+        $this->locale = $locale;
 
         $loader = new Loader();
         $loader->setlocale($locale);
@@ -80,11 +87,11 @@ class Translator
             ? $translator->gettext($msgId)
             : $this->fallbackTranslatorLoader->getTranslator()->gettext($msgId);
 
-        $keys = array_map(function ($key) {
-            return sprintf('{%s}', $key);
-        }, array_keys($params));
+        $translated = MessageFormatter::formatMessage($this->locale, $value, $params);
+        if (false === $translated) {
+            $translated = $value; // fallback to the original key
+        }
 
-        $translated = str_replace(array_values($keys), array_values($params), $value);
-        return $capitalize ? \ucfirst($translated) : $translated;
+        return $capitalize ? ucfirst($translated) : $translated;
     }
 }
